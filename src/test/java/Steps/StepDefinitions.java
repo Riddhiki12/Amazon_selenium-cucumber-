@@ -76,7 +76,7 @@ public class StepDefinitions {
     @When("the user checks for deals and discounts")
     public void theUserChecksForDealsAndDiscounts() throws InterruptedException {
         homePage= new HomePage(driver);
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         homePage.getDealButton().click();
 
         homePage.getDealButton().sendKeys("Today's Deals");
@@ -88,7 +88,7 @@ public class StepDefinitions {
         String text = homePage.getDealResult().getText();
         System.out.println(text);
 
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         String ExpectedTitle = "Today's Deals";
         Assert.assertEquals(text, ExpectedTitle);
     }
@@ -111,7 +111,7 @@ public class StepDefinitions {
     public void theUnknownProductResultShouldBeDisplayed() throws InterruptedException {
         String text = homePage.getRandomSearch().getText();
         System.out.println(text);
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
 
         Assert.assertEquals(text, "\"aztp\"");
@@ -126,7 +126,7 @@ public class StepDefinitions {
     @Then("the Category search result should be displayed")
     public void theCategorySearchResultShouldBeDisplayed() throws InterruptedException {
         String text = homePage.getCategoryResult().getText();
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         System.out.println(text);
 
 
@@ -146,7 +146,7 @@ public class StepDefinitions {
     @And("User  searches for Echo Smart Speakers & Displays")
     public void userSearchesForEchoSmartSpeakersDisplays() throws InterruptedException {
         homePage= new HomePage(driver);
-        Thread.sleep(5000);
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         homePage.getCategoryClick().click();
 
 
@@ -173,8 +173,9 @@ public class StepDefinitions {
     public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
         String text = homePage.getReleaseResult().getText();
         System.out.println(text);
-       Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
         String ExpectedTitle = "Amazon Hot New Releases";
+        driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         Assert.assertEquals(text, ExpectedTitle);
 
     }
