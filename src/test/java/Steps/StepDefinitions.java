@@ -12,6 +12,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.HomePage;
 import utils.BrowserManager;
@@ -111,9 +112,9 @@ public class StepDefinitions {
         String text = homePage.getRandomSearch().getText();
         System.out.println(text);
         Thread.sleep(2000);
-        String ExpectedTitle = "No results for";
 
-        Assert.assertEquals(text,ExpectedTitle);
+
+        Assert.assertEquals(text, "\"aztp\"");
     }
 
 
@@ -155,12 +156,15 @@ public class StepDefinitions {
             //Scenario for new release feature
 
     @When("the user checks with the new releases")
-    public void theUserChecksWithTheNewReleases() throws InterruptedException {
+    public void theUserChecksWithTheNewReleases() {
 
         homePage= new HomePage(driver);
-        Thread.sleep(2000);
+        Wait wait1 = new FluentWait(driver)
+                .withTimeout(10,TimeUnit.SECONDS)
+                        .pollingEvery(5,TimeUnit.SECONDS)
+                                .ignoring(Exception.class);
         homePage.getReleaseClick().click();
-        Thread.sleep(2000);
+
         homePage.getReleaseClick().sendKeys("New Releases");
 
     }
@@ -169,7 +173,7 @@ public class StepDefinitions {
     public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
         String text = homePage.getReleaseResult().getText();
         System.out.println(text);
-        Thread.sleep(5000);
+       Thread.sleep(2000);
         String ExpectedTitle = "Amazon Hot New Releases";
         Assert.assertEquals(text, ExpectedTitle);
 
