@@ -63,9 +63,7 @@ public class StepDefinitions {
     public void the_product_result_should_be_displayed() {
       String text = homePage.getSearchResult().getText();
       System.out.println(text);
-
-
-        Assert.assertEquals(text, "\"Alexa\"");
+      Assert.assertEquals(text, "\"Alexa\"");
     }
 
 
@@ -122,7 +120,7 @@ public class StepDefinitions {
 
 
 
-             // Scenario to search by the category
+             // Scenario outline to search by the category
 
     @Then("the Category search result should be displayed")
     public void theCategorySearchResultShouldBeDisplayed() throws InterruptedException {
@@ -171,8 +169,7 @@ public class StepDefinitions {
     public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
         String text = homePage.getReleaseResult().getText();
         System.out.println(text);
-
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         String ExpectedTitle = "Amazon Hot New Releases";
         Assert.assertEquals(text, ExpectedTitle);
 

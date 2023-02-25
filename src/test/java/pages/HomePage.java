@@ -36,7 +36,7 @@ public class HomePage {
     public WebElement getRandomSearch() {
         return randomSearch;
     }
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[1]/div/span[1]/div[1]/div[1]/div/div/div/div[1]/span[1]")
+    @FindBy(xpath = "//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[2]/div/div/div/div[1]/span[1]")
     WebElement randomSearch;
 
 
