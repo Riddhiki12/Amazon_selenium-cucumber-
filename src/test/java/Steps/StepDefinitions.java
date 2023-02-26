@@ -154,9 +154,12 @@ public class StepDefinitions {
     public void theUserChecksWithTheNewReleases() throws InterruptedException {
 
         homePage= new HomePage(driver);
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        Wait wait1 = new FluentWait(driver)
+                .withTimeout(10,TimeUnit.SECONDS)
+                        .pollingEvery(2,TimeUnit.SECONDS)
+                                .ignoring(Exception.class);
        homePage.getReleaseClick().click();
-       Thread.sleep(2000);
+
 
 
 
@@ -168,7 +171,6 @@ public class StepDefinitions {
         String url =  driver.getCurrentUrl();
 
         Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
-        Thread.sleep(2000);
 
     }
 }
