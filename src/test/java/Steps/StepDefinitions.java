@@ -156,16 +156,15 @@ public class StepDefinitions {
             //Scenario for new release feature
 
     @When("the user checks with the new releases")
-    public void theUserChecksWithTheNewReleases() {
+    public void theUserChecksWithTheNewReleases() throws InterruptedException {
 
         homePage= new HomePage(driver);
-        Wait wait1 = new FluentWait(driver)
-                .withTimeout(10,TimeUnit.SECONDS)
-                        .pollingEvery(5,TimeUnit.SECONDS)
-                                .ignoring(Exception.class);
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        homePage.getReleaseClick().sendKeys( "New Releases");
         homePage.getReleaseClick().click();
 
-        homePage.getReleaseClick().sendKeys("New Releases");
+
+
 
     }
 
@@ -175,7 +174,6 @@ public class StepDefinitions {
         System.out.println(text);
         driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
         String ExpectedTitle = "Amazon Hot New Releases";
-        driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         Assert.assertEquals(text, ExpectedTitle);
 
     }

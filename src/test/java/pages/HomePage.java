@@ -84,7 +84,7 @@ public class HomePage {
         return releaseResult;
     }
 
-    @FindBy(xpath= "//*[@id=\"nav-xshop\"]/a[11]")
+    @FindBy(xpath= "//*[@id=\"nav-xshop\"]/a[10]")
     WebElement releaseClick;
 
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div/div/span[1]" )
