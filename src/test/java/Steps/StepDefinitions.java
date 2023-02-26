@@ -78,19 +78,14 @@ public class StepDefinitions {
         homePage= new HomePage(driver);
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         homePage.getDealButton().click();
-
-        homePage.getDealButton().sendKeys("Today's Deals");
-
     }
 
     @Then("the deals result should be displayed")
     public void theDealsResultShouldBeDisplayed() throws InterruptedException {
-        String text = homePage.getDealResult().getText();
-        System.out.println(text);
-
+        String url = driver.getCurrentUrl();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        String ExpectedTitle = "Today's Deals";
-        Assert.assertEquals(text, ExpectedTitle);
+
+        Assert.assertEquals(url,"https://www.amazon.in/deals?ref_=nav_cs_gb");
     }
 
 
@@ -160,9 +155,7 @@ public class StepDefinitions {
 
         homePage= new HomePage(driver);
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        homePage.getReleaseClick().sendKeys( "New Releases");
-        homePage.getReleaseClick().click();
-
+       homePage.getReleaseClick().click();
 
 
 
@@ -170,11 +163,9 @@ public class StepDefinitions {
 
     @Then("the new release result should be displayed")
     public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
-        String text = homePage.getReleaseResult().getText();
-        System.out.println(text);
-        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
-        String ExpectedTitle = "Amazon Hot New Releases";
-        Assert.assertEquals(text, ExpectedTitle);
+        String url =  driver.getCurrentUrl();
+        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
 
     }
 }

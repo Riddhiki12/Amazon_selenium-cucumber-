@@ -68,11 +68,14 @@ public class HomePage {
 
     }
 
+
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[2]/div/div[3]/span/div[1]/div/div/div[1]/ul/li[1]/span/a/span")
     WebElement categoryClick;
 
     @FindBy(xpath = "/html/body/div[1]/div[2]/span/div/h1/div/div[1]/div/div/span[3]")
     WebElement categoryResult;
+
+
 
 
 
@@ -84,7 +87,7 @@ public class HomePage {
         return releaseResult;
     }
 
-    @FindBy(xpath= "//*[@id=\"nav-xshop\"]/a[10]")
+    @FindBy(xpath= "/html/body/div[1]/header/div/div[5]/div[2]/div/div/a[10]")
     WebElement releaseClick;
 
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div/div/span[1]" )
