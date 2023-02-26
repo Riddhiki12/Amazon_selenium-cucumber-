@@ -153,23 +153,14 @@ public class StepDefinitions {
     @When("the user checks with the new releases")
     public void theUserChecksWithTheNewReleases() throws InterruptedException {
         homePage= new HomePage(driver);
-        Wait wait1 = new FluentWait(driver)
-                .withTimeout(15,TimeUnit.SECONDS)
-                        .pollingEvery(7,TimeUnit.SECONDS)
-                                .ignoring(Exception.class);
-       homePage.getReleaseClick().click();
-
-
-
-
-
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
+        homePage.getReleaseClick().click();
     }
 
     @Then("the new release result should be displayed")
     public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
         String url =  driver.getCurrentUrl();
-        driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
 
     }
