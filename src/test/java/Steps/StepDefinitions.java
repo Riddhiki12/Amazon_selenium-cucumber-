@@ -164,8 +164,9 @@ public class StepDefinitions {
 
     @Then("the new release result should be displayed")
     public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
-        String url =  driver.getCurrentUrl();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        String url =  driver.getCurrentUrl();
+
         Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
         Thread.sleep(2000);
 
