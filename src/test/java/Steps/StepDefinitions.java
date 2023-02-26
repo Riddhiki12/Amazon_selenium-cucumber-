@@ -76,14 +76,14 @@ public class StepDefinitions {
     @When("the user checks for deals and discounts")
     public void theUserChecksForDealsAndDiscounts() throws InterruptedException {
         homePage= new HomePage(driver);
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
         homePage.getDealButton().click();
     }
 
     @Then("the deals result should be displayed")
     public void theDealsResultShouldBeDisplayed() throws InterruptedException {
         String url = driver.getCurrentUrl();
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
 
         Assert.assertEquals(url,"https://www.amazon.in/deals?ref_=nav_cs_gb");
     }
@@ -155,8 +155,8 @@ public class StepDefinitions {
 
         homePage= new HomePage(driver);
         Wait wait1 = new FluentWait(driver)
-                .withTimeout(10,TimeUnit.SECONDS)
-                        .pollingEvery(2,TimeUnit.SECONDS)
+                .withTimeout(15,TimeUnit.SECONDS)
+                        .pollingEvery(7,TimeUnit.SECONDS)
                                 .ignoring(Exception.class);
        homePage.getReleaseClick().click();
 
@@ -167,7 +167,7 @@ public class StepDefinitions {
 
     @Then("the new release result should be displayed")
     public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         String url =  driver.getCurrentUrl();
 
         Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
