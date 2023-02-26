@@ -153,8 +153,8 @@ public class StepDefinitions {
     @When("the user checks with the new releases")
     public void theUserChecksWithTheNewReleases() throws InterruptedException {
         homePage= new HomePage(driver);
-        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
         homePage.getReleaseClick().click();
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
     }
 
     @Then("the new release result should be displayed")
