@@ -46,7 +46,7 @@ public class HomePage {
     public WebElement getDealButton() {
         return dealButton;
     }
-    @FindBy(xpath = "//*[@id=\"nav-xshop\"]/a[5]")
+    @FindBy(xpath = "//a[@href='/deals?ref_=nav_cs_gb']")
     WebElement dealButton;
 
     public WebElement getDealResult(){
@@ -87,7 +87,7 @@ public class HomePage {
         return releaseResult;
     }
 
-    @FindBy(xpath= "/html/body/div[1]/header/div/div[5]/div[2]/div/div/a[10]")
+    @FindBy(xpath= "//a[@href='/new-releases/?ref_=nav_cs_newreleases']")
     WebElement releaseClick;
 
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div/div/span[1]" )

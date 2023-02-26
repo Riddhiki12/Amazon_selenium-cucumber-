@@ -156,6 +156,7 @@ public class StepDefinitions {
         homePage= new HomePage(driver);
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
        homePage.getReleaseClick().click();
+       Thread.sleep(2000);
 
 
 
@@ -166,6 +167,7 @@ public class StepDefinitions {
         String url =  driver.getCurrentUrl();
         driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
+        Thread.sleep(2000);
 
     }
 }
