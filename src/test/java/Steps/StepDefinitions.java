@@ -71,28 +71,7 @@ public class StepDefinitions {
 
 
 
-          // scenario for Deals and Discount
-
-    @When("the user checks for deals and discounts")
-    public void theUserChecksForDealsAndDiscounts() throws InterruptedException {
-        homePage= new HomePage(driver);
-        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
-        homePage.getDealButton().click();
-    }
-
-    @Then("the deals result should be displayed")
-    public void theDealsResultShouldBeDisplayed() throws InterruptedException {
-        String url = driver.getCurrentUrl();
-        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
-
-        Assert.assertEquals(url,"https://www.amazon.in/deals?ref_=nav_cs_gb");
-    }
-
-
-
-
-
-          //Scenario for unknown product search
+                  //Scenario for unknown product search
 
     @When("the user enter the unknown product name")
     public void theUserEnterTheUnknownProductName(){
@@ -115,8 +94,49 @@ public class StepDefinitions {
 
 
 
+                 // scenario for Deals and Discount
 
-             // Scenario outline to search by the category
+    @When("the user checks for deals and discounts")
+    public void theUserChecksForDealsAndDiscounts() throws InterruptedException {
+        homePage= new HomePage(driver);
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
+        homePage.getDealButton().click();
+    }
+
+    @Then("the deals result should be displayed")
+    public void theDealsResultShouldBeDisplayed() throws InterruptedException {
+        String url = driver.getCurrentUrl();
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
+
+        Assert.assertEquals(url,"https://www.amazon.in/deals?ref_=nav_cs_gb");
+    }
+
+
+
+
+
+
+            //Scenario for new release feature
+
+    @When("the user checks with the new releases")
+    public void theUserChecksWithTheNewReleases() throws InterruptedException {
+        homePage= new HomePage(driver);
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
+        homePage.getReleaseClick().click();
+    }
+
+    @Then("the new release result should be displayed")
+    public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
+        String url =  driver.getCurrentUrl();
+        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
+
+        Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
+    }
+
+
+
+
+            // Scenario outline to search by the category
 
     @Then("the Category search result should be displayed")
     public void theCategorySearchResultShouldBeDisplayed() throws InterruptedException {
@@ -147,22 +167,5 @@ public class StepDefinitions {
 
     }
 
-
-            //Scenario for new release feature
-
-    @When("the user checks with the new releases")
-    public void theUserChecksWithTheNewReleases() throws InterruptedException {
-        homePage= new HomePage(driver);
-        homePage.getReleaseClick().click();
-        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
-    }
-
-    @Then("the new release result should be displayed")
-    public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
-        driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
-        String url =  driver.getCurrentUrl();
-        Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
-
-    }
 }
 
