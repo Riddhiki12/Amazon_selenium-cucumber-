@@ -83,15 +83,15 @@ public class HomePage {
         return releaseClick;
     }
 
-    public WebElement getReleaseResult(){
-        return releaseResult;
-    }
+    //public WebElement getReleaseResult(){
+    //    return releaseResult;
+  //  }
 
     @FindBy(xpath= "//a[@href='/gp/new-releases/?ref_=nav_cs_newreleases']")
     WebElement releaseClick;
 
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div/div/span[1]" )
-    WebElement releaseResult;
+ //   @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div/div/span[1]" )
+   // WebElement releaseResult;
 
 
 
