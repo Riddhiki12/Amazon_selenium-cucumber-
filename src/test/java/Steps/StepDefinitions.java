@@ -118,19 +118,19 @@ public class StepDefinitions {
 
             //Scenario for new release feature
 
-    @When("the user checks with the new releases")
-    public void theUserChecksWithTheNewReleases() throws InterruptedException {
+    @When("the user checks with the customer service")
+    public void theUserChecksWithTheCustomerService() throws InterruptedException {
         homePage= new HomePage(driver);
         driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
-        homePage.getReleaseClick().click();
+        homePage.getCustomerClick().click();
     }
 
-    @Then("the new release result should be displayed")
-    public void theNewReleaseResultShouldBeDisplayed() throws InterruptedException {
+    @Then("the customer service result should be displayed")
+    public void theCustomerServiceResultShouldBeDisplayed() throws InterruptedException {
         String url =  driver.getCurrentUrl();
         driver.manage().timeouts().implicitlyWait(7,TimeUnit.SECONDS);
 
-        Assert.assertEquals(url,"https://www.amazon.in/gp/new-releases/?ref_=nav_cs_newreleases");
+        Assert.assertEquals(url,"https://www.amazon.in/gp/help/customer/display.html?nodeId=200507590&ref_=nav_cs_help");
     }
 
 

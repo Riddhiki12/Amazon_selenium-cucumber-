@@ -79,16 +79,16 @@ public class HomePage {
 
 
 
-    public WebElement getReleaseClick(){
-        return releaseClick;
+    public WebElement getCustomerClick(){
+        return customerClick;
     }
 
     //public WebElement getReleaseResult(){
     //    return releaseResult;
   //  }
 
-    @FindBy(xpath= "//a[@href='/gp/new-releases/?ref_=nav_cs_newreleases']")
-    WebElement releaseClick;
+    @FindBy(xpath= "//a[@href='/gp/help/customer/display.html?nodeId=200507590&ref_=nav_cs_help']")
+    WebElement customerClick;
 
  //   @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div/div/span[1]" )
    // WebElement releaseResult;

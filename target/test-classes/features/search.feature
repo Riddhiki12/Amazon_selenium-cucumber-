@@ -18,10 +18,10 @@ Feature: Search a product feature
    Then the deals result should be displayed
 
 
-  Scenario: Verify that the user able to search with the new releases
+  Scenario: Verify that the user able to search for customer service
       Given the user navigates to the home page
-      When the user checks with the new releases
-      Then the new release result should be displayed
+      When the user checks with the customer service
+      Then the customer service result should be displayed
 
 
   Scenario Outline: Verify that the user is able to search by the category
